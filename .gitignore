@@ -33,3 +33,7 @@
 
 # The content of the install folder
 install/
+
+# Matlab and Matrix market files 
+testmatrices/mat/*.mat
+testmatrices/mm/*.mtx
