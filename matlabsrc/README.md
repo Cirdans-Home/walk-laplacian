@@ -6,4 +6,4 @@ This folder contains both the implementations of the various walk-based Laplacia
 
 | code |   | Implementation  |
 |------|---|-----------------|
-|`kwalklaplacian.m`| $\mathbb{L}(f) = \operatorname{diag}(f(A)\mathbf{1}) - f(A)$ | Implementation of the walk-based Laplacians |
+|`kwalklaplacian.m`| $\mathbb{L}(f) = \text{diag}(f(A)\mathbf{1}) - f(A)$ | Implementation of the walk-based Laplacians |
