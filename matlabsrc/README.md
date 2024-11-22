@@ -42,6 +42,27 @@ Implementation of the NBT $\phi$-based Laplacian, the matrix-vector product rout
 </tr>
 </table>
 
+## Path-Laplacians
+
+In order to perform some of the comparisons we need an implementation of the path-Laplacian (actually the transformed Path-Laplacian). This is implemented in the
+file `pathlap.m`.
+
+```matlab
+function Lpath = pathlap(G,type,parameter)
+    %PATHLAP Builds the transformed k-Path Laplacian of the given type
+    %   INPUT: G graph object
+    %          type = 'exp' or 'power'
+    %          parameter = scaling parameter
+    %   OUTPUT: Lpath transformed path Laplacian
+end
+```
+
+If you use it, please cite the original works where this has been introduced:
+
+> Estrada, Ernesto, et al. "Path Laplacian operators and superdiffusive processes on graphs. I. One-dimensional case." Linear Algebra and its Applications 523 (2017): 307-334.
+
+> Estrada, Ernesto, et al. "Path Laplacian operators and superdiffusive processes on graphs. II. Two-dimensional lattice." Linear Algebra and its Applications 555 (2018): 373-397.
+
 
 ## Auxiliary routines
 
