@@ -40,3 +40,5 @@ testmatrices/mm/*.mtx
 
 # Avoid committing 919
 matlabsrc/919
+# Avoid committing rktoolbx
+matlabsrc/rktoolbox
