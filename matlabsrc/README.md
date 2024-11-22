@@ -43,4 +43,30 @@ Implementation of the NBT $\phi$-based Laplacian, the matrix-vector product rout
 </table>
 
 
+## Auxiliary routines
 
+The code requires some auxiliary routines for parameter determinations, e.g., the $\alpha$ for the Katz-based Laplacian of NBT type, or the construction of Krylov spaces. These are briefly reported here.
+
+<table>
+<tr>
+<th>
+Code
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>producealphas.m</td>
+<td>
+
+```matlab
+function [alphavec,rhoz] = producealphas(A,k,check)
+%PRODUCEALPHAS Prints the value of alpha to be used in the Fortran test
+%for evaluating the linear system solution routine.
+```
+
+See the listalphas.m file for its usage.
+</td>
+</tr>
+</table>
