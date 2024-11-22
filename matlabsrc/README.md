@@ -68,7 +68,7 @@ If you use it, please cite the original works where this has been introduced:
 To study the behavior of the diffusion process induced by different Laplacian operators we look at the average return probability
 
 ```math
-\hat{p}_0(t) = \frac{1}{N} \sum_{i=1}^{N} [P(t)]_{i,i} = \frac{1}{N} 	ext{tr}\left( \exp(- t L ) \right) = \frac{1}{N} \sum_{i=1}^{N} \exp(- \lambda_i( L ) t),
+\hat{p}_0(t) = \frac{1}{N} \sum_{i=1}^{N} [P(t)]_{i,i} = \frac{1}{N} \text{tr}\left( \exp(- t L ) \right) = \frac{1}{N} \sum_{i=1}^{N} \exp(- \lambda_i( L ) t),
 ```
 
 The implementation of a stochastic estimator for its approximation is given in the function `xnystraceexp.m`:
@@ -113,6 +113,19 @@ function [alphavec,rhoz] = producealphas(A,k,check)
 ```
 
 See the listalphas.m file for its usage.
+</td>
+</tr>
+<tr>
+<td> generate_tree.py </td>
+<td>
+
+```python
+# This function generates a tree with a given number of nodes and a given branching factor using
+# the NetworkX library. The script has to be executed through the MATLAB engine API in order to
+# be able to call the function from MATLAB and return the adjacency matrix of the generated tree
+# as a MATLAB sparse matrix.
+```
+
 </td>
 </tr>
 </table>
