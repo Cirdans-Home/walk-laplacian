@@ -63,6 +63,31 @@ If you use it, please cite the original works where this has been introduced:
 
 > Estrada, Ernesto, et al. "Path Laplacian operators and superdiffusive processes on graphs. II. Two-dimensional lattice." Linear Algebra and its Applications 555 (2018): 373-397.
 
+## Randomized Average Return Probability Estimator
+
+To study the behavior of the diffusion process induced by different Laplacian operators we look at the average return probability
+
+```math
+\hat{p}_0(t) = \frac{1}{N} \sum_{i=1}^{N} [P(t)]_{i,i} = \frac{1}{N} \operatorname{tr}\left( \exp(- t L ) \right) = \frac{1}{N} \sum_{i=1}^{N} \exp(- \lambda_i( L ) t),
+```
+
+The implementation of a stochastic estimator for its approximation is given in the function `xnystraceexp.m`:
+
+```matlab
+function [T,AVT,ERRT] = xnystraceexp(A,m,type,t,nt,varargin)
+%XNYSTRACE-EXP randomized average return probability estimate
+%   A adjacency matrix of the graph
+%   m number of matrix vector product to be used in the estimate
+%   type type of dynamic to be studied, admissible types are:
+%       - 'LAPLACIAN' Standard Laplacian dynamic y'(t) = L^T y(t)
+%   t = [t0,t1] time interval for the estimate, if longer uses the value
+%   nt number of time points in the [t0,t1] interval, if t is longer than 2
+%       takes the length of t as value
+end
+```
+
+The implementation is based on the XTrace estimator, if you use this routine also mention:
+> Epperly, Ethan N., Joel A. Tropp, and Robert J. Webber. "Xtrace: Making the most of every sample in stochastic trace estimation." SIAM Journal on Matrix Analysis and Applications 45.1 (2024): 1-23.
 
 ## Auxiliary routines
 
