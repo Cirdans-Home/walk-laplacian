@@ -76,4 +76,4 @@ under Linux, you can download the zip file from the supplementary materials of t
 
 ## Running the experiments
 
-The code to run the experiments is contained in the :open_file_folder: matlabsrc folder. The folder also contains the various routines that implement the walk-based Laplacians. See the README inside the folder for more information.
+The code to run the experiments is contained in the :open_file_folder: matlabsrc folder. The folder also contains the various routines that implement the walk-based Laplacians. See the [README](/matlabsrc/README.md) inside the folder for more information.
