@@ -147,6 +147,15 @@ These are the scripts needed to replicate the numerical experiments contained in
    ```matlab
    pyenv('Version','<path>/bin/python3','ExecutionMode','OutOfProcess')
    ```
-   >[!TIP]
+   
+   > [!TIP]
    > You can change the environment only before executing any Python script. If MATLAB complains, you should just restart it and execute
    > the previous command as first thing.
+3. Average Return Probabilities experiments
+   1. The test in `averagereturnprobabilities.m` runs the example with the full computation, hence it is extremely taxing on both memory
+      and time. In our case we run it on a cluster node under SLURM. The bash script `run_averagereturn.sh` has an example with our cluster
+      configuratio. It should be easily adaptable to other system. The experiment can then be run by executing the command
+      ```bash
+      sbatch run_averagereturn.sh
+      ```
+      outputs are then saved as `.mat` files that can be used to produce the figures employing the `batchaveragereturn_plot.m` file.
