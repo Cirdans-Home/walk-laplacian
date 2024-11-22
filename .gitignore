@@ -37,3 +37,6 @@ install/
 # Matlab and Matrix market files 
 testmatrices/mat/*.mat
 testmatrices/mm/*.mtx
+
+# Avoid committing 919
+matlabsrc/919

@@ -129,3 +129,24 @@ See the listalphas.m file for its usage.
 </td>
 </tr>
 </table>
+
+## Numerical Examples
+
+These are the scripts needed to replicate the numerical experiments contained in the paper.
+
+1. Graph with a trap `trap_example.m`. This example depens on the 919 algorithm, see the `get919.sh` script in the parent folder.
+2. Random-tree example `tree_example.m`. This example depens on the 919 algorithm, see the `get919.sh` script in the parent folder.
+   To run it you need to have a working interface between Python and MATLAB. On a Linux based system this can be achieved by running
+   on the bash:
+   ```bash
+   python3 -m venv <path>
+   source <path>/bin/activate
+   pip install networkx numpy scipy
+   ```
+   Then going back to MATLAB and running
+   ```matlab
+   pyenv('Version','<path>/bin/python3','ExecutionMode','OutOfProcess')
+   ```
+   >[!TIP]
+   > You can change the environment only before executing any Python script. If MATLAB complains, you should just restart it and execute
+   > the previous command as first thing.
