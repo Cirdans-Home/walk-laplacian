@@ -68,7 +68,7 @@ If you use it, please cite the original works where this has been introduced:
 To study the behavior of the diffusion process induced by different Laplacian operators we look at the average return probability
 
 ```math
-\hat{p}_0(t) = \frac{1}{N} \sum_{i=1}^{N} [P(t)]_{i,i} = \frac{1}{N} \operatorname{tr}\left( \exp(- t L ) \right) = \frac{1}{N} \sum_{i=1}^{N} \exp(- \lambda_i( L ) t),
+\hat{p}_0(t) = \frac{1}{N} \sum_{i=1}^{N} [P(t)]_{i,i} = \frac{1}{N} 	ext{tr}\left( \exp(- t L ) \right) = \frac{1}{N} \sum_{i=1}^{N} \exp(- \lambda_i( L ) t),
 ```
 
 The implementation of a stochastic estimator for its approximation is given in the function `xnystraceexp.m`:
