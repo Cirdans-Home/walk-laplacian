@@ -42,3 +42,5 @@ testmatrices/mm/*.mtx
 matlabsrc/919
 # Avoid committing rktoolbx
 matlabsrc/rktoolbox
+# Avoi committing logfiles
+runs/katzsolution/*.txt

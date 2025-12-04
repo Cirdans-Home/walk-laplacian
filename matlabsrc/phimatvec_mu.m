@@ -1,7 +1,7 @@
-function y = phimatvec(DL,A,D,Z,n,o,x,t)
+function y = phimatvec_mu(DL,A,D,Z,n,o,x,t,mu)
 %%MATVEC Actual matrix-vector implementation for the exponential walk-based
 %Laplacian. The quantity used in the routine are instantiated by the
-%constructor buildphibasedlaplacian.m. This function should be used through
+%constructor buildphibasedlaplacian_mu.m. This function should be used through
 %there.
 
 if ~islogical(t)
@@ -22,13 +22,13 @@ y = zeros(size(x));
 if ~t % no transpose
     for i=1:size(x,2)
         tx = A*x(:,i);
-        [v,stats] = phipm(1.0, Z, [o,[tx;A*tx - D*x(:,i)]], 1e-12, false, 50);
+        [v,stats] = phipm(1.0, Z, [o,[tx;A*tx - mu*D*x(:,i)]], 1e-12, false, 50);
         y(:,i) = DL.*x(:,i) - v(1:n,1);
     end
 else % transpose 
     for i=1:size(x,2)
         [v,stats] = phipm(1.0, Z', [o,[o(1:n);x(:,i)]], 1e-12, false, 50);
-        tv = A*v(1:n,1) + A*(A*v(1:n,1)) - D*v(1:n,1);
+        tv = A*v(1:n,1) + A*(A*v(1:n,1)) - mu*D*v(1:n,1);
         y(:,i) = DL.*x(:,i) - tv;
     end
 end
