@@ -24,7 +24,7 @@ Implementation of the walk-based Laplacians
 buildkatzbasedlaplacian.m
 </td>
 <td>
-$\mathbb{L}^{NBT}(\alpha) = (1-\alpha^2)(\text{diag}( (I - \alpha A - \alpha^2(I-D))^{-1}\mathbf{1}) - (I - \alpha A - \alpha^2(I-D))^{-1} )$
+$\mathbb{L}_1((1-\alpha x)^{-1}) = (1-\alpha^2)(\text{diag}( (I - \alpha A - \alpha^2(I-D))^{-1}\mathbf{1}) - (I - \alpha A - \alpha^2(I-D))^{-1} )$
 </td>
 <td>
 Implementation of the NBT Katz based Laplacian, the matrix-vector product routine is implemented in katzmatvec.m.
@@ -34,10 +34,18 @@ Implementation of the NBT Katz based Laplacian, the matrix-vector product routin
 <td>
 buildphibasedlaplacian.m
 </td>
-<td> $\mathbb{L}^{\text{NBT}}(\mathbf{c})$
+<td> $\mathbb{L}_1(\mathbf{c})$
 </td>
 <td>
 Implementation of the NBT $\phi$-based Laplacian, the matrix-vector product routine si implemented in phimatvec.m. The code uses Algorithm 919.
+</td>
+</tr>
+<tr>
+<td> buildphibasedlaplacian_mu.m </td>
+<td> $\mathbb{L}_{\mu}(\mathbf{c})$
+</td>
+<td>
+Implementation of the downweighted backtracking $\phi$-based Laplacian, the matrix-vector product routine si implemented in phimatvec.m. The code uses Algorithm 919.
 </td>
 </tr>
 </table>

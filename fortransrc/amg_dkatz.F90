@@ -40,7 +40,7 @@ program amg_dkatz
   use psb_ext_mod
   use psb_linsolve_mod
   use psb_util_mod
-#ifdef HAVE_CUDA
+#ifdef PSB_HAVE_CUDA
   use psb_cuda_mod
 #endif
   use amg_prec_mod
@@ -181,7 +181,7 @@ program amg_dkatz
   integer(psb_lpk_), allocatable :: perm(:), glob_indexes(:)
   logical   :: have_guess=.false., have_ref=.false.
 
-#ifdef HAVE_CUDA
+#ifdef PSB_HAVE_CUDA
   type(psb_d_cuda_elg_sparse_mat), target   :: aelg
   type(psb_d_cuda_csrg_sparse_mat), target  :: acsrg
   type(psb_d_cuda_hlg_sparse_mat), target   :: ahlg
@@ -192,7 +192,7 @@ program amg_dkatz
 
   call psb_init(ctxt)
   call psb_info(ctxt,iam,np)
-#ifdef HAVE_CUDA
+#ifdef PSB_HAVE_CUDA
   call psb_cuda_init(ctxt,iam)
 #endif
 
@@ -214,7 +214,7 @@ program amg_dkatz
     write(psb_out_unit,*) ' '
     write(psb_out_unit,*) 'Using PSBLAS version: ',psb_version_string_
     write(psb_out_unit,*) 'Using AMG4PSBLAS version: ',amg_version_string_
-#ifdef HAVE_CUDA
+#ifdef PSB_HAVE_CUDA
     write(psb_out_unit,*) 'This is the CUDA Capable Version'
 #endif
     write(psb_out_unit,*) 'This is the ',trim(name),' test program'
@@ -226,7 +226,7 @@ program amg_dkatz
   call get_parms(ctxt,mtrx_file,rhs_file,guess_file,sol_file,filefmt, &
        & part,afmt,s_choice,p_choice,alpha,mu)
 
-#ifdef HAVE_CUDA
+#ifdef PSB_HAVE_CUDA
   select case(psb_toupper(afmt))
   case('ELG')
     amold => aelg
@@ -760,7 +760,7 @@ if(info /= psb_success_) then
   goto 9999
 end if
 
-#ifdef HAVE_CUDA
+#ifdef PSB_HAVE_CUDA
   call psb_cuda_exit()
 #endif
   call psb_exit(ctxt)
